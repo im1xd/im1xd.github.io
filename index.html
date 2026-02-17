@@ -3,101 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imad Eddine Abid | AI & Data Science Engineer</title>
+    <meta name="description" content="Portfolio of Imad Eddine Abid - AI & Data Science Engineer">
+    <title>Imad Eddine Abid | AI Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2c3e50;
             --accent: #3498db;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; }
-        header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; }
-        .container { max-width: 1100px; margin: auto; padding: 2rem; }
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; margin-top: 1rem; }
-        .section-title { text-align: center; margin-bottom: 2rem; color: var(--dark); text-transform: uppercase; letter-spacing: 1px; }
         
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; background-color: #fafafa; }
+        
+        /* Header Section with Animation */
+        header { 
+            background: var(--gradient); 
+            color: white; 
+            padding: 6rem 2rem; 
+            text-align: center; 
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        .profile-img:hover { transform: scale(1.05); }
+
+        header h1 { margin: 0; font-size: 3rem; font-weight: 700; letter-spacing: -1px; }
+        header p { font-size: 1.3rem; opacity: 0.9; margin-top: 0.5rem; }
+        
+        .btn-container { margin-top: 2rem; }
+        .btn { 
+            display: inline-flex; align-items: center; gap: 10px;
+            background: white; color: var(--primary); 
+            padding: 0.8rem 2rem; text-decoration: none; 
+            border-radius: 50px; font-weight: bold; 
+            margin: 0.5rem; transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); background: var(--light); }
+        .btn.outline { background: transparent; border: 2px solid white; color: white; }
+        .btn.outline:hover { background: white; color: var(--primary); }
+
+        .container { max-width: 1100px; margin: auto; padding: 3rem 2rem; }
+        .section-title { 
+            text-align: center; margin-bottom: 3rem; 
+            color: var(--primary); font-size: 2rem; 
+            position: relative; display: inline-block; left: 50%; transform: translateX(-50%);
+        }
+        .section-title::after {
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--accent); margin: 10px auto 0; border-radius: 2px;
+        }
+
         /* Projects Grid */
-        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .project-card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; transition: transform 0.3s; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .project-card h3 { color: var(--accent); margin-top: 0; }
-        .tech-stack { font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 1rem; }
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .project-card { 
+            background: white; border-radius: 15px; padding: 2rem; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+            box-shadow: var(--shadow); border-top: 5px solid var(--accent);
+            position: relative; overflow: hidden;
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .project-card h3 { color: var(--primary); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        
+        .tech-tags { margin: 1rem 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag { background: #eef2f7; color: #555; padding: 0.3rem 0.8rem; border-radius: 5px; font-size: 0.85rem; font-weight: 600; }
+        
+        /* Skills Section */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 2rem; }
+        .skill-item { 
+            background: white; padding: 1rem 1.5rem; border-radius: 12px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px;
+            font-weight: bold; color: var(--dark); transition: 0.3s; border: 1px solid #eee;
+        }
+        .skill-item i { color: var(--accent); font-size: 1.2rem; }
+        .skill-item:hover { transform: scale(1.05); border-color: var(--accent); }
 
-        /* Skills */
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-        .skill-tag { background: var(--light); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: var(--dark); }
+        /* Footer */
+        footer { background: var(--primary); color: white; text-align: center; padding: 3rem 1rem; margin-top: 5rem; }
+        .social-links a { color: white; font-size: 1.5rem; margin: 0 10px; transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); }
 
-        footer { background: #333; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
-        footer a { color: var(--accent); text-decoration: none; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header { clip-path: none; padding-bottom: 4rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
+        <img src="me.jpg" alt="Imad Eddine" class="profile-img" onerror="this.style.display='none'">
+        
         <h1>Imad Eddine Abid</h1>
         <p>AI & Data Science Engineer | Master’s Graduate</p>
-        <p>Specialized in Big Data Analytics, NLP & Computer Vision</p>
-        <a href="mailto:imadabid117@gmail.com" class="btn">Contact Me</a>
-        <a href="https://github.com/im1xd" class="btn" style="background:#333;">GitHub</a>
-        <a href="https://www.linkedin.com/in/im1d" class="btn" style="background:#0077b5;">LinkedIn</a>
+        
+        <div class="btn-container">
+            <a href="cv.pdf" target="_blank" class="btn"><i class="fas fa-file-download"></i> Download CV</a>
+            <a href="https://www.linkedin.com/in/im1d" target="_blank" class="btn outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/im1xd" target="_blank" class="btn outline"><i class="fab fa-github"></i> GitHub</a>
+        </div>
     </header>
 
     <div class="container">
-        <section style="margin-bottom: 4rem;">
-            <h2 class="section-title">About Me</h2>
-            <p style="text-align: center; max-width: 800px; margin: auto;">
-                Result-oriented AI & Data Science Engineer with a Master’s degree and specialized expertise in Big Data Analytics, Machine Learning, and Computer Vision. Experienced in designing scalable pipelines for massive data processing and building end-to-end web solutions.
+        <section>
+            <h2 class="section-title">Professional Profile</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: #555;">
+                Engineered for impact. I am an <strong>AI & Data Science Engineer</strong> specialized in transforming massive datasets into actionable insights. With a strong foundation in <strong>Big Data Analytics</strong>, <strong>NLP</strong>, and <strong>Computer Vision</strong>, I build scalable solutions that solve real-world problems.
             </p>
         </section>
 
-        <section>
+        <section style="margin-top: 4rem;">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects">
                 <div class="project-card">
-                    <h3>📊 Social Media Big Data Analytics</h3>
-                    <div class="tech-stack">Python, NLP, Graph Theory, Big Data</div>
-                    <p>Developed a scalable pipeline to analyze massive social media datasets. Implemented Graph Mining algorithms (PageRank, Louvain) to detect influencers and communities, combined with NLP for sentiment analysis.</p>
+                    <h3><i class="fas fa-chart-network"></i> Social Big Data Analytics</h3>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">Graph Mining</span>
+                    </div>
+                    <p>Designed a scalable pipeline to analyze massive social media datasets using <strong>PageRank</strong> and <strong>Louvain</strong> algorithms to detect trends and influencers.</p>
                 </div>
 
                 <div class="project-card">
-                    <h3>👁️ Vignette OCR System</h3>
-                    <div class="tech-stack">YOLO, CRNN, PyTorch, Computer Vision</div>
-                    <p>Designed an end-to-end OCR system for complex image text extraction. Deployed YOLO models for precise localization and trained a CRNN architecture for high-accuracy text recognition.</p>
+                    <h3><i class="fas fa-eye"></i> Vignette OCR System</h3>
+                    <div class="tech-tags">
+                        <span class="tag">YOLO</span>
+                        <span class="tag">CRNN</span>
+                        <span class="tag">PyTorch</span>
+                    </div>
+                    <p>End-to-end Computer Vision system for complex text extraction. Achieved high accuracy in real-time text localization and recognition.</p>
                 </div>
 
                 <div class="project-card">
-                    <h3>🌱 Smart Agriculture Platform</h3>
-                    <div class="tech-stack">Django, IoT, Machine Learning</div>
-                    <p>AI-powered platform for remote farm management. Deployed crop-health inference models with 92% accuracy and integrated local payment solutions for e-commerce.</p>
+                    <h3><i class="fas fa-leaf"></i> Smart Agriculture AI</h3>
+                    <div class="tech-tags">
+                        <span class="tag">Django</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                    <p>IoT-based platform for farm management with a <strong>92% accuracy</strong> crop-health inference model and e-commerce integration.</p>
                 </div>
 
                 <div class="project-card">
-                    <h3>☁️ CloudSim Simulation</h3>
-                    <div class="tech-stack">Java, CloudSim, Simulation</div>
-                    <p>Simulated cloud environments to evaluate resource management policies. Improved scheduling policies reducing response time by 15% across various scenarios.</p>
+                    <h3><i class="fas fa-cloud"></i> CloudSim Simulation</h3>
+                    <div class="tech-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Simulation</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                    <p>Optimized cloud resource scheduling policies, reducing response time by <strong>15%</strong> through rigorous simulation and analysis.</p>
                 </div>
             </div>
         </section>
 
         <section style="margin-top: 4rem;">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title">Technical Arsenal</h2>
             <div class="skills-grid">
-                <span class="skill-tag">Python & Java</span>
-                <span class="skill-tag">Big Data Analytics</span>
-                <span class="skill-tag">NLP & Computer Vision</span>
-                <span class="skill-tag">Machine Learning (YOLO/OCR)</span>
-                <span class="skill-tag">Django & Flask</span>
-                <span class="skill-tag">SQL & Power BI</span>
-                <span class="skill-tag">Git & Docker</span>
+                <div class="skill-item"><i class="fab fa-python"></i> Python & Pandas</div>
+                <div class="skill-item"><i class="fas fa-brain"></i> Machine Learning</div>
+                <div class="skill-item"><i class="fas fa-database"></i> Big Data & SQL</div>
+                <div class="skill-item"><i class="fas fa-camera"></i> Computer Vision (YOLO)</div>
+                <div class="skill-item"><i class="fab fa-java"></i> Java</div>
+                <div class="skill-item"><i class="fab fa-docker"></i> Docker & Git</div>
+                <div class="skill-item"><i class="fas fa-globe"></i> Django & Flask</div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Imad Eddine Abid. Hosted on GitHub Pages.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/im1d"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/im1xd"><i class="fab fa-github"></i></a>
+            <a href="mailto:imadabid117@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.7;">&copy; 2026 Imad Eddine Abid. Built with precision.</p>
     </footer>
 
 </body>
