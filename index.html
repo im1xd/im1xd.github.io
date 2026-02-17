@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imad Eddine Abid | AI & Data Science Engineer</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; }
+        header { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+        .container { max-width: 1100px; margin: auto; padding: 2rem; }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; margin-top: 1rem; }
+        .section-title { text-align: center; margin-bottom: 2rem; color: var(--dark); text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Projects Grid */
+        .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; transition: transform 0.3s; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .project-card h3 { color: var(--accent); margin-top: 0; }
+        .tech-stack { font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 1rem; }
+
+        /* Skills */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .skill-tag { background: var(--light); padding: 0.5rem 1rem; border-radius: 20px; font-weight: bold; color: var(--dark); }
+
+        footer { background: #333; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        footer a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Imad Eddine Abid</h1>
+        <p>AI & Data Science Engineer | Master’s Graduate</p>
+        <p>Specialized in Big Data Analytics, NLP & Computer Vision</p>
+        <a href="mailto:imadabid117@gmail.com" class="btn">Contact Me</a>
+        <a href="https://github.com/im1xd" class="btn" style="background:#333;">GitHub</a>
+        <a href="https://www.linkedin.com/in/im1d" class="btn" style="background:#0077b5;">LinkedIn</a>
+    </header>
+
+    <div class="container">
+        <section style="margin-bottom: 4rem;">
+            <h2 class="section-title">About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto;">
+                Result-oriented AI & Data Science Engineer with a Master’s degree and specialized expertise in Big Data Analytics, Machine Learning, and Computer Vision. Experienced in designing scalable pipelines for massive data processing and building end-to-end web solutions.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>📊 Social Media Big Data Analytics</h3>
+                    <div class="tech-stack">Python, NLP, Graph Theory, Big Data</div>
+                    <p>Developed a scalable pipeline to analyze massive social media datasets. Implemented Graph Mining algorithms (PageRank, Louvain) to detect influencers and communities, combined with NLP for sentiment analysis.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>👁️ Vignette OCR System</h3>
+                    <div class="tech-stack">YOLO, CRNN, PyTorch, Computer Vision</div>
+                    <p>Designed an end-to-end OCR system for complex image text extraction. Deployed YOLO models for precise localization and trained a CRNN architecture for high-accuracy text recognition.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>🌱 Smart Agriculture Platform</h3>
+                    <div class="tech-stack">Django, IoT, Machine Learning</div>
+                    <p>AI-powered platform for remote farm management. Deployed crop-health inference models with 92% accuracy and integrated local payment solutions for e-commerce.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>☁️ CloudSim Simulation</h3>
+                    <div class="tech-stack">Java, CloudSim, Simulation</div>
+                    <p>Simulated cloud environments to evaluate resource management policies. Improved scheduling policies reducing response time by 15% across various scenarios.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 4rem;">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Python & Java</span>
+                <span class="skill-tag">Big Data Analytics</span>
+                <span class="skill-tag">NLP & Computer Vision</span>
+                <span class="skill-tag">Machine Learning (YOLO/OCR)</span>
+                <span class="skill-tag">Django & Flask</span>
+                <span class="skill-tag">SQL & Power BI</span>
+                <span class="skill-tag">Git & Docker</span>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Imad Eddine Abid. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
